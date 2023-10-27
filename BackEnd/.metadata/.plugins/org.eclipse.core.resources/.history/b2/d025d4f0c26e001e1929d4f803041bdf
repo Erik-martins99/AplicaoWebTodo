@@ -1,0 +1,5 @@
+package com.erik.todo.resources;
+
+public class TodoResource {
+
+}

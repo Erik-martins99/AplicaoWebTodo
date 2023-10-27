@@ -1,0 +1,36 @@
+package com.erik.todo;
+
+import java.util.Arrays;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.erik.todo.domain.Todo;
+import com.erik.todo.repositorys.TodoRepository;
+
+@SpringBootApplication
+public class TodoApplication implements CommandLineRunner{
+
+	@Autowired
+	private TodoRepository todoRepository;
+	
+	public static void main(String[] args) {
+		SpringApplication.run(TodoApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+		
+		Todo t1 = new Todo(null, "Estudar", "Estudar Spring Boot 2 e Angular 11", LocalDateTime.parse("25/03/2022 16:20", formatter), false);
+		
+		todoRepository.saveAll(Arrays.asList(t1));
+	}
+
+}

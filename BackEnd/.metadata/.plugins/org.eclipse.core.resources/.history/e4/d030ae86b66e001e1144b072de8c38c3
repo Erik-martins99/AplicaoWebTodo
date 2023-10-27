@@ -1,0 +1,5 @@
+package com.erik.todo.repositorys;
+
+public interface TodoRepository {
+
+}

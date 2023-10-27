@@ -1,0 +1,5 @@
+package com.erik.todo.services.exceptions;
+
+public class ObjectNotFoundException {
+
+}
